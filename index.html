@@ -1,1 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Oktavia Santa Yohana</title>
+<meta name="description" content="Portfolio of Oktavia Santa Yohana: marketing, brand communication and corporate strategy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: pink hero block with cutout portrait, then a stats strip, case-study grid, honors, a gallery of activities, and a navy contact band. Palette from the Allianz Lovesure deck: coral pink, white, Allianz navy. */
+:root{
+  --bg:#FFF6F8; --surface:#FFFFFF; --ink:#0B1B3A; --muted:#55607D; --line:#F4D3DD;
+  --pink:#FB6F92; --pink-text:#C21F58; --blush:#FFE3EA; --navy:#003781; --on-pink:#0B1B3A; --on-navy:#FFFFFF;
+  --band:#003781; --chip:#FFFFFF;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif; --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0A1630; --surface:#12234A; --ink:#FFF1F5; --muted:#A9B4D0; --line:#263B6E; --pink-text:#FF8FAB; --blush:#1B2F5E; --band:#06214F; --chip:#12234A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0A1630; --surface:#12234A; --ink:#FFF1F5; --muted:#A9B4D0; --line:#263B6E; --pink-text:#FF8FAB; --blush:#1B2F5E; --band:#06214F; --chip:#12234A; color-scheme:dark}
 
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-.02em}
+.eyebrow{font:700 12px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--pink-text)}
+
+/* nav */
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+.nav .wrap{display:flex;align-items:center;gap:20px;min-height:60px}
+.logo{font:700 20px/1 var(--display);text-decoration:none;display:flex;align-items:center;gap:10px;margin-right:auto}
+.logo i{width:30px;height:30px;border-radius:50%;background:var(--pink);display:grid;place-items:center;font:800 14px/1 var(--display);font-style:normal;color:var(--on-pink)}
+.nav nav{display:flex;gap:22px}
+.nav nav a{text-decoration:none;font-weight:500;font-size:15px;color:var(--muted)}
+.nav nav a:hover{color:var(--pink-text)}
+.theme{border:1px solid var(--line);background:var(--surface);color:var(--ink);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:16px}
+@media(max-width:640px){.nav nav{display:none}}
+
+/* hero */
+.hero{background:var(--pink);color:var(--on-pink);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:end;padding-block:56px 0}
+.hero-copy{padding-bottom:56px;min-width:0}
+.hero h1{font-size:clamp(46px,8vw,104px);font-weight:800;margin:18px 0 22px}
+.hero h1{color:#fff;text-shadow:0 2px 18px rgba(0,55,129,.28)}
+.hero h1 span{display:block;font-weight:500}
+.hero .eyebrow{color:var(--on-pink)}
+.hero p.lead{font-size:clamp(17px,2vw,21px);max-width:34em;margin:0 0 26px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px;padding:0;list-style:none}
+.chips li{background:rgba(255,255,255,.55);border:1px solid rgba(11,27,58,.15);padding:6px 13px;border-radius:99px;font-size:14px;font-weight:500}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:15px;padding:13px 22px;border-radius:99px;border:2px solid var(--on-pink)}
+.btn.solid{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn.solid:hover{background:#00296a}
+.btn.line:hover{background:rgba(255,255,255,.4)}
+.portrait{position:relative;align-self:end;min-width:0}
+.portrait::before{content:"";position:absolute;left:6%;right:-14%;bottom:0;height:78%;background:var(--navy);border-radius:260px 260px 0 0}
+.portrait img{position:relative;display:block;width:100%;max-width:420px;margin:0 auto;height:auto}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.portrait{order:-1;max-width:300px;margin:0 auto}.hero-copy{padding-bottom:40px}.portrait::before{right:0}}
+
+/* stats */
+.stats{background:var(--navy);color:#fff}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stat{padding:26px 22px;border-left:1px solid rgba(255,255,255,.18);min-width:0}
+.stat:first-child{border-left:0}
+.stat b{display:block;font:800 clamp(32px,4.5vw,50px)/1 var(--display);color:var(--pink);font-variant-numeric:tabular-nums}
+.stat span{display:block;margin-top:8px;font-size:14px;color:#D6E0F5}
+@media(max-width:760px){.stats .wrap{grid-template-columns:1fr 1fr}.stat:nth-child(3){border-left:0}.stat:nth-child(n+3){border-top:1px solid rgba(255,255,255,.18)}}
+
+/* sections */
+section{padding-block:84px 0}
+.sec-head{display:flex;flex-direction:column;gap:12px;margin-bottom:36px;max-width:40em}
+.sec-head h2{font-size:clamp(34px,5vw,58px);font-weight:800}
+.sec-head p{margin:0;color:var(--muted)}
+
+/* case grid */
+.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.shot{display:block;position:relative;border:0;padding:0;background:var(--blush);cursor:zoom-in;width:100%;aspect-ratio:16/9;overflow:hidden}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s}
+.shot:hover img{transform:scale(1.03)}
+.shot em{position:absolute;right:12px;bottom:12px;background:var(--navy);color:#fff;font:700 12px/1 var(--body);padding:8px 12px;border-radius:99px;font-style:normal}
+.thumbs{display:flex;gap:8px;padding:10px 12px 0}
+.thumbs button{border:1px solid var(--line);border-radius:8px;padding:0;overflow:hidden;width:76px;aspect-ratio:16/9;background:var(--blush);cursor:pointer}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.thumbs button[aria-current="true"]{outline:2px solid var(--pink)}
+.case-body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:12px;flex:1}
+.tag{font:700 12px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--pink-text)}
+.case h3{font-size:clamp(24px,3vw,31px);font-weight:700}
+.case p{margin:0;color:var(--muted);font-size:16px}
+.metrics{display:flex;flex-wrap:wrap;gap:10px;margin:auto 0 0;padding:6px 0 0;list-style:none}
+.metrics li{background:var(--blush);border-radius:14px;padding:10px 14px;min-width:0}
+.metrics b{display:block;font:800 24px/1 var(--display);color:var(--pink-text);font-variant-numeric:tabular-nums}
+.metrics span{font-size:13px;color:var(--muted);line-height:1.3;display:block;margin-top:4px}
+@media(max-width:820px){.cases{grid-template-columns:1fr}}
+
+/* honors */
+.honors{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
+.honor-list{display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.honor-list li{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 22px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.honor-list .medal{font:800 34px/1 var(--display);color:var(--pink-text);min-width:64px}
+.honor-list strong{display:block;font:700 19px/1.25 var(--display)}
+.honor-list small{color:var(--muted);font-size:14px}
+.honors .case{height:100%}
+@media(max-width:820px){.honors{grid-template-columns:1fr}}
+
+.cert-title{font-size:clamp(26px,3.4vw,36px);font-weight:800;margin:56px 0 20px}
+.certs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;list-style:none;margin:0;padding:0}
+.certs li{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.certs strong{font:700 18px/1.25 var(--display)}
+.certs small{color:var(--muted);font-size:14px}
+.certs .score{margin-top:auto;align-self:flex-start;background:var(--blush);color:var(--pink-text);font:700 13px/1 var(--body);padding:7px 12px;border-radius:99px}
+@media(max-width:1000px){.certs{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.certs{grid-template-columns:1fr}}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;text-align:left;padding:0;color:inherit;font:inherit;cursor:zoom-in;min-width:0}
+.tile .pic{aspect-ratio:16/9;overflow:hidden;background:var(--blush)}
+.tile img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.tile div.cap{padding:14px 16px 18px}
+.tile .tag{display:block;margin-bottom:7px}
+.tile strong{font:700 17px/1.3 var(--display);display:block}
+.tile small{color:var(--muted);font-size:14px}
+.tile:hover{border-color:var(--pink)}
+@media(max-width:900px){.gallery{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.gallery{grid-template-columns:1fr}}
+
+/* contact */
+.contact{margin-top:96px;background:var(--band);color:#fff;padding-block:72px 40px}
+.contact h2{font-size:clamp(38px,7vw,84px);font-weight:800;color:#fff}
+.contact h2 em{font-style:normal;color:var(--pink)}
+.contact p.lead{color:#D6E0F5;max-width:32em;margin:18px 0 34px}
+.clist{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;list-style:none;margin:0;padding:0}
+.clist li{border:1px solid rgba(255,255,255,.22);border-radius:18px;padding:18px 20px;min-width:0;display:flex;flex-direction:column;gap:6px}
+.clist .k{font:700 12px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--pink)}
+.clist .v{font-weight:500;overflow-wrap:anywhere;user-select:all}
+.clist .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+.clist a,.clist button{font:700 13px/1 var(--body);color:#fff;border:1px solid rgba(255,255,255,.4);background:transparent;border-radius:99px;padding:8px 13px;cursor:pointer;text-decoration:none}
+.clist a:hover,.clist button:hover{background:var(--pink);color:var(--on-pink);border-color:var(--pink)}
+.foot{margin-top:56px;padding-top:20px;border-top:1px solid rgba(255,255,255,.18);font-size:14px;color:#B9C7E6;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:820px){.clist{grid-template-columns:1fr}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(6,16,40,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb img{max-width:100%;max-height:calc(100% - 60px);object-fit:contain;border-radius:10px;background:#fff}
+.lb p{margin:0;color:#fff;font-size:15px;text-align:center}
+.lb button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:max(14px,env(safe-area-inset-right,0px));width:44px;height:44px;border-radius:50%;border:0;background:var(--pink);color:var(--on-pink);font-size:20px;font-weight:700;cursor:pointer}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top"><i>O</i>Oktavia Santa Yohana</a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a><a href="#honors">Honors</a><a href="#beyond">Beyond work</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="theme" id="theme" aria-label="Switch light or dark theme" title="Switch theme">◐</button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Portfolio 2026 · Marketing</span>
+        <h1>Oktavia <span>Santa Yohana</span></h1>
+        <p class="lead">Final-year Business Management student at Universitas Pendidikan Indonesia (class of 2022), with a big interest in corporate strategy and in brand and communication marketing.</p>
+        <ul class="chips" aria-label="Hard skills">
+          <li>Meta Business Ads</li><li>Google Ads</li><li>Google Trends</li><li>Google Keyword Planner</li>
+        </ul>
+        <div class="btns">
+          <a class="btn solid" href="#work">See my work</a>
+          <a class="btn line" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="portrait"><img src="img/me.png" alt="Portrait of Oktavia Santa Yohana" width="572" height="900"></div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="wrap">
+      <div class="stat"><b>65K</b><span>views in a 2-month social media project, 93% from non-followers</span></div>
+      <div class="stat"><b>900%</b><span>growth in average views on ambassador content</span></div>
+      <div class="stat"><b>Top 30</b><span>Unilever Future Leaders League 2025</span></div>
+      <div class="stat"><b>2nd</b><span>place among 120+ national teams, IDEAS business plan</span></div>
+    </div>
+  </div>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Project recap</span>
+        <h2>Strategy first, then content that is measured.</h2>
+        <p>Selected projects across social media, national-level pitching, copywriting, creator partnerships and ambassador management. Tap any image to enlarge.</p>
+      </div>
+      <div class="cases" id="cases"></div>
+    </div>
+  </section>
+
+  <section id="honors">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Honors received</span>
+        <h2>Competitions, certificates and trust from peers.</h2>
+      </div>
+      <div class="honors">
+        <ul class="honor-list">
+          <li><span class="medal">Top 30</span><div><strong>Unilever Future Leaders League 2025</strong><small>Pepsodent case: gum-health awareness and premiumization, built on in-depth interviews and a survey.</small></div></li>
+          <li><span class="medal">2nd</span><div><strong>IDEAS National Business Plan Competition</strong><small>Sustainable fashion for Gen-Z, piloted in Bandung. Led the team through a first-ever business competition.</small></div></li>
+          <li><span class="medal">2nd</span><div><strong>English Debate Competition</strong><small>Also received the Best Philosopher award.</small></div></li>
+          <li><span class="medal">5.9%</span><div><strong>CCEP Indonesia Bootcamp</strong><small>Coca-Cola Europacific Partners. Chosen as 1 of 200 from 3,400+ applicants. Learned live from CCEP Indonesia teams on brand strategy, data for growth, commercial development, field sales, manufacturing and business finance.</small></div></li>
+          <li><span class="medal">Cert</span><div><strong>Brand Marketing, MarkPlus Institute</strong><small>Entrepreneurial Marketing Certification: validating ideas, spotting market opportunities and turning consumer problems into valuable business solutions.</small></div></li>
+          <li><span class="medal">UPI</span><div><strong>Campus Ambassador</strong><small>Plus RevoU Intro to Digital Marketing certification.</small></div></li>
+          <li><span class="medal">Talks</span><div><strong>Speaker and mentor</strong><small>Speaker for Business Proposal Writing and mentor for 3 groups in Image Business Mentoring.</small></div></li>
+        </ul>
+        <div class="case" id="honor-case"></div>
+      </div>
+      <h3 class="cert-title">Certifications</h3>
+      <ul class="certs">
+        <li><span class="tag">English First</span><strong>EF SET English Certificate</strong><small>Jul 2026 to Jul 2027</small><span class="score">Score 62</span></li>
+        <li><span class="tag">MarkPlus</span><strong>Entrepreneurial Marketing Certification</strong><small>Dec 2025 to Dec 2028</small><span class="score">Score 8.35</span></li>
+        <li><span class="tag">Duolingo</span><strong>Duolingo English Test</strong><small>Jan 2025 to Jan 2027</small><span class="score">Score 125</span></li>
+        <li><span class="tag">Wadhwani Foundation</span><strong>JobReady Employability Skills</strong><small>Oct 2024 to Sep 2027</small><span class="score">Score 100</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="beyond">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Experience, leadership, social projects</span>
+        <h2>Beyond work: stages, teams and communities.</h2>
+        <p>Master of ceremony, podcaster, project officer, organization staff and community volunteer.</p>
+      </div>
+      <div class="gallery" id="gallery"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--pink)">Contact</span>
+    <h2>Let's build something <em>worth measuring.</em></h2>
+    <p class="lead">Open to marketing, brand communication and strategy roles. Reach me on any channel below.</p>
+    <ul class="clist">
+      <li><span class="k">Email</span><span class="v" id="mail">oktaviasanta19@gmail.com</span><div class="row"><button data-copy="oktaviasanta19@gmail.com">Copy</button><a href="mailto:oktaviasanta19@gmail.com">Write</a></div></li>
+      <li><span class="k">WhatsApp</span><span class="v">+62 895 3530 40907</span><div class="row"><button data-copy="+62 895 3530 40907">Copy</button><a href="https://wa.me/62895353040907" target="_blank" rel="noopener">Chat</a></div></li>
+      <li><span class="k">LinkedIn</span><span class="v">Oktavia Santa Yohana</span><div class="row"><a href="https://www.linkedin.com/search/results/people/?keywords=Oktavia%20Santa%20Yohana" target="_blank" rel="noopener">Find profile</a></div></li>
+    </ul>
+    <div class="foot"><span>© 2026 Oktavia Santa Yohana</span><span>Universitas Pendidikan Indonesia · Management 2022</span></div>
+  </div>
+</footer>
+
+<script>
+const CASES=[
+ {tag:"Social media management · Solutive Inovasi Kreatif",title:"From noise to measurable reach",
+  text:"A 2-month social media project built on audience intelligence. I mapped 4 audience segments before the first post, then produced 59 pieces of content (30 stories, 29 feeds) backwards from that insight.",
+  imgs:["p5","p6"],alts:["Account performance and top content","Four audience segments"],
+  m:[["65K","views"],["93%","reach from non-followers"],["59","pieces of content"]]},
+ {tag:"Leadership project · NSEI x Paragon · Kemdiktiristek",title:"Young Leaders for Indonesia, coached by McKinsey",
+  text:"A 3-month project designing a national cross-program leadership ecosystem (IFLE). Pitched to NSEI Paragon directors and presented to the ministry, with an active McKinsey consultant as coach.",
+  imgs:["p8"],alts:["IFLE pitch to NSEI Paragon and Kemdiktiristek"],
+  m:[["3 mo","project length"],["2","stakeholder groups, one narrative"]]},
+ {tag:"Personal initiative · @mindnagement.id",title:"Built a brand, not just content",
+  text:"A pocket-size business management learning platform built end to end: content strategy, contributor sourcing, consumer education and a post-publish evaluation loop. Real cases include Roblox, Mixue and Scarlett Whitening.",
+  imgs:["p9"],alts:["mindnagement.id content and reach"],
+  m:[["4,880","top post reach: Market Sizing"],["3,271","Issue Tree & MECE"],["2,444","STP: Scarlett"]]},
+ {tag:"Competition · Pepsodent Gum Expert",title:"Unilever Future Leaders League 2025",
+  text:"Market research through in-depth interviews and a questionnaire shaped an experimental campaign for Gen-Z, then a premiumization case with interviews of 3 types of mothers. It took me to the Top 30.",
+  imgs:["p11"],alts:["Unilever Future Leaders League case"],
+  m:[["Top 30","national selection"]]},
+ {tag:"Copywriting · Nuansa Cerah Informasi",title:"Paid media and SEO that support each other",
+  text:"Managed and optimized Meta Ads for B2B users in asset-heavy industries, planned 3 months of content with keyword research, and wrote and revised 12 SEO technical articles for 2 websites.",
+  imgs:["p14","p15"],alts:["Meta Ads campaigns","SEO keyword research and articles"],
+  m:[["12","SEO technical articles"],["2","websites boosted"],["3 mo","content plan"]]},
+ {tag:"Social media · Trippy and Groove Studio",title:"Creators matched to the brand",
+  text:"Shortlisted high-fit niche KOLs from a database of 1,000+ creators and negotiated collaborations aligned with the brand scope of work. Also produced 50+ conversion-driven posts.",
+  imgs:["p17"],alts:["KOL database and content"],
+  m:[["20%","of target list secured"],["50+","posts produced"],["+15%","engagement rate"]]},
+ {tag:"Ambassador management · Global",title:"Podcasts, recruitment and creative direction",
+  text:"Produced 4 end-to-end podcast episodes, ran a recruitment marketing strategy that reached beyond Asia to Europe and the US, and managed promotion and administration for 100+ applicants.",
+  imgs:["p19"],alts:["Podcast, recruitment and ambassador content"],
+  m:[["+50%","listenership"],["+40%","international reach"],["900%","growth in average views"]]}
+];
+const HONOR={tag:"Competition · IDEAS National Business Plan",title:"Second place among 120+ national teams",
+  text:"A sustainable fashion business for Gen-Z, validated by surveys and piloted in Bandung. My first business competition and my first time as a team leader.",
+  imgs:["p21"],alts:["IDEAS business plan pitch"],m:[["2nd","among 120+ teams"]]};
+const TILES=[
+ ["p22","Achievements","English Debate Competition","2nd winner and Best Philosopher"],
+ ["p23","Certification","RevoU","Intro to Digital Marketing"],
+ ["p24","Speaker and mentor","Business Proposal Writing","Mentor for 3 groups, Image Business Mentoring"],
+ ["p26","Experience","Professional Master of Ceremony","2022 to present, formal, semi-formal and non-formal events"],
+ ["p27","Experience","Podcaster at POMAGE","On YouTube and Spotify"],
+ ["p28","Leadership and project management","Management Entrepreneurship Festival 2023","Project Officer"],
+ ["p29","Leadership and project management","MOKA-KU FPEB 2024","Project Officer, campus orientation"],
+ ["p30","Organizational","Impactional Ambassador Program","Manager at Sponsorship Bureau, IMAGE UPI 2024/2025"],
+ ["p31","Organizational","Ikatan Mahasiswa Management 2023/2024","Human Resource Department staff"],
+ ["p32","Social projects","FPEB UPI Summer Program 2024","With Universiti Kebangsaan Malaysia"],
+ ["p33","Social projects","MCTCARE 2024","Community service"],
+ ["p34","Social projects","Program Sosial Management","Event coordinator"]
+];
+const src=k=>"img/"+k+".jpg";
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function caseHTML(c){
+  const th=c.imgs.length>1?`<div class="thumbs">${c.imgs.map((k,i)=>`<button type="button" data-i="${i}" aria-label="Show image ${i+1}" ${i?"":'aria-current="true"'}><img src="${src(k)}" alt="" loading="lazy"></button>`).join("")}</div>`:"";
+  return `<button class="shot" type="button" aria-label="Enlarge image: ${esc(c.title)}"><img src="${src(c.imgs[0])}" alt="${esc(c.alts[0])}" loading="lazy"><em>Enlarge</em></button>${th}
+  <div class="case-body"><span class="tag">${esc(c.tag)}</span><h3>${esc(c.title)}</h3><p>${esc(c.text)}</p>
+  <ul class="metrics">${c.m.map(x=>`<li><b>${esc(x[0])}</b><span>${esc(x[1])}</span></li>`).join("")}</ul></div>`;
+}
+function mount(el,c){
+  el.innerHTML=caseHTML(c);
+  let cur=0; const img=el.querySelector(".shot img");
+  el.querySelector(".shot").addEventListener("click",()=>openLB(src(c.imgs[cur]),c.alts[cur]));
+  el.querySelectorAll(".thumbs button").forEach(b=>b.addEventListener("click",()=>{
+    cur=+b.dataset.i; img.src=src(c.imgs[cur]); img.alt=c.alts[cur];
+    el.querySelectorAll(".thumbs button").forEach(x=>x.removeAttribute("aria-current")); b.setAttribute("aria-current","true");
+  }));
+}
+const cases=document.getElementById("cases");
+CASES.forEach(c=>{const a=document.createElement("article");a.className="case";cases.appendChild(a);mount(a,c)});
+mount(document.getElementById("honor-case"),HONOR);
+
+const gal=document.getElementById("gallery");
+TILES.forEach(t=>{
+  const b=document.createElement("button");b.type="button";b.className="tile";
+  b.innerHTML=`<div class="pic"><img src="${src(t[0])}" alt="${esc(t[2])}" loading="lazy"></div><div class="cap"><span class="tag">${esc(t[1])}</span><strong>${esc(t[2])}</strong><small>${esc(t[3])}</small></div>`;
+  b.addEventListener("click",()=>openLB(src(t[0]),t[2]+" · "+t[3]));
+  gal.appendChild(b);
+});
+
+/* lightbox */
+let lb=null,last=null;
+function closeLB(){if(lb){lb.remove();lb=null;document.removeEventListener("keydown",onKey);if(last)last.focus()}}
+function onKey(e){if(e.key==="Escape")closeLB()}
+function openLB(url,cap){
+  last=document.activeElement;
+  lb=document.createElement("div");lb.className="lb";lb.setAttribute("role","dialog");lb.setAttribute("aria-modal","true");
+  lb.innerHTML=`<button type="button" aria-label="Close">✕</button><img src="${url}" alt="${esc(cap)}"><p>${esc(cap)}</p>`;
+  lb.addEventListener("click",e=>{if(e.target.tagName!=="IMG")closeLB()});
+  document.body.appendChild(lb);lb.querySelector("button").focus();document.addEventListener("keydown",onKey);
+}
+
+/* copy */
+document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",async()=>{
+  const t=b.dataset.copy;let ok=false;
+  try{await navigator.clipboard.writeText(t);ok=true}catch(e){
+    const v=b.closest("li").querySelector(".v");const r=document.createRange();r.selectNodeContents(v);const s=getSelection();s.removeAllRanges();s.addRange(r);
+  }
+  const old=b.textContent;b.textContent=ok?"Copied":"Selected, press copy";setTimeout(()=>b.textContent=old,1800);
+}));
+
+/* theme */
+const root=document.documentElement;
+try{const s=localStorage.getItem("theme");if(s)root.dataset.theme=s}catch(e){}
+document.getElementById("theme").addEventListener("click",()=>{
+  const dark=root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;
+  const n=dark?"light":"dark";root.dataset.theme=n;try{localStorage.setItem("theme",n)}catch(e){}
+});
+</script>
+
+</body>
+</html>
